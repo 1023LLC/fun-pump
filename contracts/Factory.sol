@@ -127,4 +127,11 @@ contract Factory {
       (bool success,) = payable(sale.creator).call{value: sale.raised}("");
       require(success, "Factory: ETH transfer failed");
    }
+
+   function withdraw(uint256 _amount) external {
+      require(msg.sender == owner, "Factory: Not owner");
+
+      (bool success,) = payable(owner).call{ value: _amount }("");
+      require(success, "Factory: ETH transfer failed");
+   }
 }
