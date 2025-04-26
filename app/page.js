@@ -22,8 +22,8 @@ export default function Home() {
     const provider = new ethers.BrowserProvider(window.ethereum)
     setProvider(provider)
 
-    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" })
-    setAccount(accounts[0])
+    
+
 
   }
 
